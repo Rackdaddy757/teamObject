@@ -8,7 +8,7 @@ const trainWithNardo = {
 get teamMembers () {
   return this._teamMembers
 },
-teamMember(newFirstName, newLastName, newAge, newSex) {
+newTeamMember(newFirstName, newLastName, newAge, newSex) {
   let member = {
     firstName: newFirstName,
     lastName: newLastName,
@@ -17,31 +17,20 @@ teamMember(newFirstName, newLastName, newAge, newSex) {
   }
   return this._teamMembers.push(member);
 },
-/*findWoman is used to loop through teamMembers and extract woman by identifying 
+/*findWoman is used to loop through teamMembers and extract women by identifying 
 if sex is listed as 'female'*/
 findWoman () {
   let woman = {};
   for (let i in this.teamMembers) {
-      let person = this.teamMembers[i]
-      console.log(person);
+      let person = this.teamMembers[i];
       if (Object.values(person).indexOf('female') != -1) {
         woman += Object.keys(person);
       }
     }
-  console.log(typeof woman)
+  console.log(woman) //prints: Rihanna,Singer,33,femaleAndrea,Yamagucci,55,female
   }
-
 };
 
-const womansTeam = {
-  _teamMembers :[],
-  get teammates () {
-  }}
-//Use this variable when you want to know how big the team is.
 const teamSize = trainWithNardo.teamMembers.length;
-trainWithNardo.teamMember('Eric', 'Jones', 34, 'male');
-//console.log(trainWithNardo.teamMembers.find(item => item.sex === 'female'));
-//console.log(trainWithNardo.teamMembers);
-//console.log(teamSize);
-
-console.log(trainWithNardo.findWoman());
+trainWithNardo.newTeamMember('Eric', 'Jones', 34, 'male');
+console.log(trainWithNardo.findWoman()); //prints: undefined
