@@ -20,14 +20,15 @@ newTeamMember(newFirstName, newLastName, newAge, newSex) {
 /*findWoman is used to loop through teamMembers and extract women by identifying 
 if sex is listed as 'female'*/
 findWoman () {
-  let woman = {};
+  let woman = [];
   for (let i in this.teamMembers) {
       let person = this.teamMembers[i];
-      if (Object.values(person).indexOf('female') != -1) {
-        woman += Object.keys(person);
+      if (person.sex != 'female') {
+        woman.push(person);
       }
     }
   console.log(woman) //prints: Rihanna,Singer,33,femaleAndrea,Yamagucci,55,female
+  return woman
   }
 };
 
